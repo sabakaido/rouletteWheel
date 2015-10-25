@@ -1,0 +1,25 @@
+{
+  "name": "roulette",
+  "version": "1.0.0",
+  "description": "roulette",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sabakaido/rouletteWheel.git"
+  },
+  "author": "sabakaido",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sabakaido/rouletteWheel/issues"
+  },
+  "homepage": "https://github.com/sabakaido/rouletteWheel#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.5",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "socket.io": "^1.3.7"
+  }
+}

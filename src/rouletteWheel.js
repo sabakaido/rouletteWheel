@@ -115,9 +115,7 @@ $.widget('javobyte.rouletteWheel', {
         }
 
         var widget = this;
-        $(this.options.pointer).load(function () {
-            widget._draw();
-        });
+        widget._draw();
     },
 
     _draw: function () {
