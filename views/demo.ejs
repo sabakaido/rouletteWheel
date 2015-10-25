@@ -17,13 +17,20 @@
         spinText : 'Click Me',
       });
     });
+    var output_url = function() {
+      $("#url-text").val(location.protocol+'//'+location.host+'/?items='+items);
+    }
   </script>
+  <style>
+    form { padding: 10px }
+    .url { padding: 10px }
+  </style>
 
   <title></title>
 </head>
 <body>
   <form class="form-inline" id="form-command" action="">
-    <input class="form-control" id="command" autocomplete="off" placeholder="input command"/>
+    <input class="form-control" id="command" autocomplete="off" placeholder="imput item"/>
     <button type="submit" class="btn btn-default">項目追加</button>
   </form>
 
@@ -32,7 +39,10 @@
     <button type="submit" class="btn btn-default">部屋追加</button>
   </form>
 
-  <button class="btn btn-default" id="output-url" onClick="window.alert(location.protocol+'//'+location.host+'/?items='+items);">URL出力</button>
+  <div class="url">
+    <label>URL</label>
+    <input type="text" class="form-control" id="url-text" disabled></textarea>
+  </div>
 
   <script type="text/javascript">
     var socket = io();
@@ -60,6 +70,7 @@
       if (items.indexOf(msg) >= 0) {
         items.splice(items.indexOf(msg), 1);
       } else {
+        //items = items.concat(msg.split(','));
         items.push(msg);
       }
 
@@ -72,6 +83,7 @@
         spinText : 'Click Me',
       });
 
+      output_url();
     });
 
     socket.on('room', function(msg){
